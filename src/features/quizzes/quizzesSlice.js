@@ -7,12 +7,13 @@ const quizzesSlice = createSlice({
   },
   reducers: {
     addQuiz: (state, action) => {
-      state.quizzes[action.payload.id] = action.payload;
+      const { id } = action.payload;
+      state.quizzes[id] = action.payload;
     },
     // other reducers for updating, deleting, etc. quizzes
   },
 });
 
-export const selectQuiz = state => state.quizzes.quizzes;
+export const selectQuizzes = state => state.quizzes.quizzes;
 export const { addQuiz } = quizzesSlice.actions;
 export default quizzesSlice.reducer;
